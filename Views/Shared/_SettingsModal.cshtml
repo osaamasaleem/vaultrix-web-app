@@ -1,0 +1,39 @@
+<div class="modal fade" id="settingsModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-4 shadow-lg">
+            <div class="modal-header border-bottom-0 pb-0">
+                <h5 class="modal-title fw-bold text-dark"><i class="bi bi-gear-fill me-2 text-accent"></i>Vault Settings</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                
+                <h6 class="fw-bold mb-3 border-bottom pb-2">Change Master Password</h6>
+                <form id="changePasswordForm">
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold text-muted">Current Password</label>
+                        <input type="password" class="form-control" id="cpCurrentPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold text-muted">New Password</label>
+                        <input type="password" class="form-control" id="cpNewPassword" minlength="12" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-semibold text-muted">Confirm New Password</label>
+                        <input type="password" class="form-control" id="cpConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary-custom w-100" id="cpSubmitBtn">Update Password</button>
+                </form>
+
+                <h6 class="fw-bold mt-5 mb-3 border-bottom pb-2">Data Management</h6>
+                <p class="text-muted small mb-2">Export your vault as a decrypted CSV file. Keep this file secure.</p>
+                <div class="mb-3">
+                    <input type="password" class="form-control" id="exportPasswordInput" placeholder="Enter Master Password to confirm">
+                </div>
+                <button type="button" class="btn btn-outline-secondary w-100" id="exportVaultBtn">
+                    <i class="bi bi-download me-2"></i>Export Vault to CSV
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

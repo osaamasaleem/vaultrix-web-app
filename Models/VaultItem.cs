@@ -8,5 +8,6 @@ namespace PasswordManager.Models
         public string Username { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
         public string Category { get; set; } = "General";
+        public bool IsFavorite { get; set; }
     }
 }

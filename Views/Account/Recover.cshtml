@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Recover Vault";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth.css" asp-append-version="true" />
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center align-items-center min-vh-75">
+        <div class="col-md-5">
+            <div class="card border-0 shadow p-4 p-md-5 rounded-4">
+                <div class="text-center mb-4">
+                    <i class="bi bi-shield-exclamation text-danger" style="font-size: 2.5rem;"></i>
+                    <h3 class="fw-bold mt-2 text-dark">Recover Vault</h3>
+                    <p class="text-muted small">Restore access using your emergency code</p>
+                </div>
+
+                <form id="recoverForm" asp-controller="Account" asp-action="Recover" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="EncryptedMekByPassword" id="newEncryptedMekByPassword" />
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label small fw-semibold text-muted">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control border-start-0 ps-0" id="email" name="Email" placeholder="name@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="recoveryCode" class="form-label small fw-semibold text-muted">16-Character Emergency Code</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-upc-scan"></i></span>
+                            <input type="text" class="form-control border-start-0 ps-0" id="recoveryCode" placeholder="XXXX-XXXX-XXXX-XXXX" required style="text-transform: uppercase; letter-spacing: 2px;">
+                        </div>
+                    </div>
+
+                    <hr class="text-muted my-4">
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label small fw-semibold text-muted">New Master Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-key"></i></span>
+                            <input type="password" class="form-control border-start-0 border-end-0 ps-0" id="password" name="NewPassword" placeholder="Must be at least 12 characters" minlength="12" required>
+                            <button class="btn btn-outline-secondary border-start-0 bg-white text-muted"
+                                    type="button"
+                                    data-toggle-password
+                                    data-target="#password"
+                                    data-icon="#toggleIcon">
+                                <i id="toggleIcon" class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <div class="progress mt-2" style="height: 4px;">
+                            <div class="progress-bar bg-danger" id="strengthMeter" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="4"></div>
+                        </div>
+                        <div class="small mt-1 fw-semibold text-end" id="strengthText"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="form-label small fw-semibold text-muted">Confirm New Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-check-circle"></i></span>
+                            <input type="password" class="form-control border-start-0 ps-0" id="confirmPassword" placeholder="Confirm your master key" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-danger w-100 py-2.5 mb-3" id="submitRecoverBtn">Restore Vault Access</button>
+
+                    <p class="text-center text-muted small mb-0">
+                        Remembered your password? <a asp-controller="Account" asp-action="Login" class="text-accent fw-semibold text-decoration-none">Log In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

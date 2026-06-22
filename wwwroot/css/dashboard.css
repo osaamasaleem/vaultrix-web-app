@@ -1,0 +1,108 @@
+/* Dashboard styles extracted from Views/Home/Dashboard.cshtml */
+
+.dashboard-container {
+  background-color: #fafafa;
+}
+
+.sidebar-link {
+  color: #525252;
+  text-decoration: none;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.1s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #f5f5f5;
+  color: #171717;
+}
+
+.sidebar-link.active {
+  background-color: #f5f5f5;
+  color: #0d9488;
+  font-weight: 600;
+}
+
+.vault-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.vault-card:hover {
+  border-color: #a3a3a3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.form-control,
+.form-select {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.15);
+}
+
+.badge-category {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: #f5f5f5;
+  color: #525252;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+}
+
+.favorite-btn {
+  color: #94a3b8;
+  line-height: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background: transparent;
+  border: 0;
+}
+
+.favorite-btn:hover {
+  color: #f59e0b;
+}
+
+.favorite-btn.is-favorite {
+  color: #f59e0b;
+}
+
+.modal-danger-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #fef2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+@keyframes vaultSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
