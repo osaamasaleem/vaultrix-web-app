@@ -27,3 +27,11 @@ Thumbs.db
 
 # JetBrains
 *.sln.iml
+
+
+# Optional
+*.docx
+*.png
+
+vaultrix.db
+Project.m4a
