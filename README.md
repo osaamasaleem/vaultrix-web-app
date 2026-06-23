@@ -52,7 +52,3 @@ dotnet run
 
 Open `https://localhost:5001` in your browser.
 
-## Academic Context
-
-Final year project — BS Information Technology  
-Foundation University Islamabad, FUSST Campus (2026)
