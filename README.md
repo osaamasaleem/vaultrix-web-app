@@ -31,6 +31,10 @@ Vaultrix implements a Two-Tier Key Architecture:
 ### Network Tab — Encrypted Payload
 ![Network Tab](screenshots/network-tab.png)
 
+## Architecture
+
+![Vaultrix Two-Tier Key Architecture](screenshots/architecture.svg)
+
 ## Security Features
 
 - AES-256-GCM authenticated encryption
