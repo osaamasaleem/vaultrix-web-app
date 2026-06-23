@@ -31,7 +31,9 @@ Thumbs.db
 
 # Optional
 *.docx
-*.png
+
 
 vaultrix.db
 Project.m4a
+vaultrix.db-shm
+vaultrix.db-wal
